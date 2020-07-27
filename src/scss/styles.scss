@@ -1,0 +1,484 @@
+@import 'fonts';
+@import 'null';
+
+
+@mixin flex-sb {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+body {
+   background-color: #f5f5f7;
+   overflow-x: hidden;
+}
+
+.container {
+   width: 100%;      
+   max-width: 1140px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+h1, legend {
+   font-family: 'Futura PT Demi', sans-serif;
+   color: #1a1a1a;
+}
+
+.title {   
+   font-size: 60px;
+   line-height: 66px;   
+   letter-spacing: -0.3px;
+   margin: 35px 0 40px;
+}
+
+.form {
+   background-color: #fff;
+   font-family: 'Futura PT Book', sans-serif;
+   padding: 30px 50px;  
+   
+}
+.hide {
+   display: none;
+}
+
+.form-group {
+   margin-top: 35px;
+   padding-bottom: 35px;
+   &:first-child {
+      margin-top: 3px;
+      padding-bottom: 50px;
+   }
+    
+   legend {
+      font-size: 30px;
+      line-height: 36px;
+      margin-bottom: 17px;
+   }
+
+   &__line {
+      position: relative;
+      &::after {
+         content: '';
+         position: absolute;
+         bottom: 0;
+         display: block;
+         width: 100%;
+         height: 1px;
+         background-color: #ebebed;      
+      } 
+   }
+}
+
+.form-group__contact {
+   @include flex-sb;
+}
+   
+.form-group__box {
+   flex: 1 1 250px;
+   display: flex;
+   flex-direction: column;
+   & + & {
+      margin-left: 30px;
+   }
+   .label {
+      font-size: 18px;
+      line-height: 24px;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+   }
+}
+
+.form-control {
+   border: 1px solid #cccccc;
+   height: 45px;
+   width: auto;
+   font-family: 'Futura PT Book', sans-serif;
+   font-size: 16px;
+   color: #333333;
+   padding-left: 20px;
+   &:focus {      
+      color: #333333;
+      opacity: 1;
+   }
+}
+
+input::-webkit-input-placeholder {
+   font-size: 16px;
+   color: #999999;
+   font-family: 'Futura PT Book', sans-serif;
+}
+input:-moz-placeholder {
+   font-size: 16px;
+   color: #999999;
+   font-family: 'Futura PT Book', sans-serif;
+}
+input::-moz-placeholder{
+   font-size: 16px;
+   color: #999999;
+   font-family: 'Futura PT Book', sans-serif;
+}
+input:-ms-input-placeholder {
+   font-size: 16px;
+   color: #999999; 
+   font-family: 'Futura PT Book', sans-serif;
+}
+input:required:invalid {
+   border-color: #ff2a19;
+}
+input:required:valid {
+   border-color: #cccccc;
+}
+
+.form-group__radio {
+   display: flex;
+   justify-content: space-between;
+   &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 2;
+   }
+}
+.radio {
+   display: flex;
+   align-items: center;
+   margin-bottom: 13px;
+   flex: 1 1 260px;
+}
+.custom-radio {
+   position: relative;
+   display: flex;
+   align-items: center;
+   
+   input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+   }
+   span {
+      font-size: 16px;
+   }
+   span::before {
+      content: '';
+      position: relative;
+      top: 5px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: 2px solid #999999;
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 10px;
+      transition: color 0.2s linear;
+   }
+   span::after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      background-color: transparent;
+      border-radius: 50%;
+      text-align: center;
+      transition: color 0.2s linear;
+   }
+   input:not(:disabled):not(:checked)+span:hover::before {
+      border-color: #2bc454;
+   }
+   input:not(:disabled):active+span::before {
+      border-color: #2bc454;
+   }
+   input:checked+span::before {
+      border-color: #2bc454;      
+      text-align: center;
+      padding: 4px;
+   }  
+   input:checked+span::after {
+      background-color: #2bc454;
+   }
+   input:disabled+span::before {
+      border-color: #cccccc;
+   }
+}
+
+.form-group__wrapper {
+   flex: 1;
+   padding-top: 3px;
+   .label {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+   }
+   input {
+      width: 100%;
+   }
+}
+
+.form-group__checkbox {
+   @include flex-sb;
+   &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+   }
+  .checkbox {
+         display: flex;
+         align-items: center;
+         margin-bottom: 14px;
+         flex: 1 1 260px;
+      } 
+   .custom-checkbox {
+      position: relative;
+      display: flex;
+      align-items: center;
+      
+      input {
+         position: absolute;
+         z-index: -1;
+         opacity: 0;
+      }  
+      span {
+         font-size: 16px;
+      } 
+      span::before {
+         content: '';
+         position: relative;
+         top: 5px;
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         background-color: transparent;
+         border: 2px solid #999999;
+         border-radius: 4px;
+         margin-right: 10px;
+         transition: color 0.2s linear;
+      }
+      span::after {
+         content: url(../img/check.png);
+         display: inline-block;
+         width: 10px;
+         height: 10px;
+         position: absolute;
+         left: 5px;
+         top: 7px;
+         background-color: transparent;
+         transition: opacity 0.2s linear;
+         opacity: 0;
+      }
+      input:not(:disabled):not(:checked)+span:hover::before {
+         border-color: #2bc454;
+      }
+      input:not(:disabled):active+span::before {
+         border-color: #2bc454;
+      }
+      input:checked+span::before {
+         border-color: #2bc454;      
+         text-align: center;
+         padding: 4px;
+      }  
+      input:checked+span::after {
+         opacity: 1;
+      }
+      input:disabled+span::before {
+         border-color: #cccccc;
+      }
+   }
+
+}
+.form-group__margin {
+   padding-bottom: 15px;
+   legend {
+      margin-bottom: 7px;
+   }
+}
+.form-group__task {
+   display: flex;
+   justify-content: space-between;
+   min-height: 180px;
+   &-wrapper {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      
+   }
+   .file {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-right: 15px;
+      p {
+         line-height: 1.6;
+         letter-spacing: 1px;
+         margin-bottom: 25px;
+      }
+
+      .custom-input {
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         &::before {
+            content: '';
+            max-width: 320px;
+            width: 100%;
+            height: 145px;
+            display: block;
+            border-radius: 10px;
+            border: 1px dashed #cccccc;  
+            background-color: transparent;    
+            position: absolute;
+            left: 0;      
+            cursor: pointer;
+         }
+         input {
+            max-width: 320px;
+            width: 100%;
+            height: 145px;
+            opacity: 0;
+            position: relative;
+            z-index: -1;           
+         }
+         
+         span {
+            display: inline-block;
+            position: relative;
+            top: -70px;
+            font-size: 16px;
+            cursor: pointer; 
+            &::before {
+               content: '';
+               position: absolute;
+               left: calc(50% - 17px);
+               top: -45px;
+               display: block;
+               width: 33px;
+               height: 33px;
+               background: #1a1a1a url(../img/arrow.png) center center no-repeat;              
+               border-radius: 50%;               
+               cursor: pointer; 
+            }
+            &::after {
+               content: 'Не более 50 МБ (doc, docx, odt)';
+               width: 200px;
+               position: absolute;
+               bottom: -20px;
+               left: -60px;
+               font-family: 'Futura PT Book';
+               font-size: 14px;
+               color: #999999;
+               text-align: center;
+               cursor: pointer; 
+            }
+         }
+      }
+   }
+
+   .info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      label {
+         font-size: 18px;
+         margin-bottom: 10px;
+      }
+      textarea {
+         min-height: 145px;
+         padding: 12px 20px;
+         resize: vertical;
+         &::-webkit-input-placeholder {
+            font-size: 16px;
+            color: #999999;
+         }
+         &:-moz-placeholder {
+            font-size: 16px;
+            color: #999999;
+         }
+         &::-moz-placeholder{
+            font-size: 16px;
+            color: #999999;
+         }
+         &:-ms-input-placeholder {
+            font-size: 16px;
+            color: #999999; 
+         }   
+      }
+   }
+   
+}
+
+.form-submit {
+   display: flex;
+   align-items: center;
+   button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      width: 145px;
+      height: 45px;
+      background-color: #2bc454;
+      border-radius: 30px;
+      font-family: 'Futura PT Demi';
+      font-size: 16px;
+      line-height: 1;
+      color: #fff;
+      margin-right: 15px;
+   }
+   span {
+      display: inline-block;
+      width: 200px;
+      font-size: 14px;
+      line-height: 1.3;
+      a {
+         color: #007aff;
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+.success {
+   width: 100%;
+   height: 350px;
+   display: none;
+   
+   background-color: #fff;
+   margin-top: 20px;
+   &-block {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .wrap {         
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         padding: 30px;
+         width: 50%;
+         img {
+            display: inline-block;
+         }
+         span {
+            font-family: 'Futura PT Demi';
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 25px;
+         }
+         p {
+            font-family: 'Futura PT Book';
+            font-size: 18px;
+         }
+      }
+   }
+   
+}
+
+
+@import 'media';

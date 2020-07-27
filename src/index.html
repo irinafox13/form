@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Форма обратной связи</title>
+</head>
+<body>   
+   <div class="block">
+      <div class="container">
+        <h1 class="title">Запрос коммерческого предложения</h1>
+         <form class="form" >         
+            <!-- fieldset 1-->
+            <fieldset class="form-group form-group__line">
+              <legend>Контактные данные</legend>
+              <div class="form-group__contact">
+                <div class="form-group__box">
+                  <label class="label" for="name">Имя</label>
+                  <input type="text" class="form-control" id="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group__box">
+                  <label class="label" for="phone">Номер телефона</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+7" pattern="[+]*[0-9]*" required>
+                </div>
+                <div class="form-group__box">
+                  <label class="label" for="email">Эл.почта</label>
+                  <input type="email" class="form-control" id="email" placeholder="Ваш e-mail" required>
+                </div>       
+              </div>                     
+            </fieldset>
+            <!-- fieldset 2-->
+            <fieldset class="form-group form-group__line">
+              <legend>Тип здания</legend>
+              <div class="form-group__radio">
+                <div class="form-group__radio-wrapper">
+                  <div class="radio">
+                    <label class="custom-radio">
+                      <input type="radio" name="type" value="" checked>
+                      <span>Торговые центры</span>
+                    </label>
+                  </div>
+                
+                  <div class="radio">
+                    <label class="custom-radio">
+                      <input type="radio" name="type" value="">
+                      <span>Гостиницы</span>
+                    </label>
+                  </div>
+                
+                  <div class="radio">
+                    <label class="custom-radio">
+                      <input type="radio" name="type" value="">
+                      <span>Промышленные объекты</span>
+                    </label>
+                  </div>
+                
+                  <div class="radio">
+                    <label class="custom-radio">
+                      <input type="radio" name="type" value="">
+                      <span>Социальные объекты</span>
+                    </label>
+                  </div>
+                
+                  <div class="radio">
+                    <label class="custom-radio">
+                      <input type="radio" name="type" value="">
+                      <span>Офисные здания</span>
+                    </label>
+                  </div>
+
+                  <div class="radio">
+                    <label class="custom-radio">
+                      <input type="radio" name="type" value="">
+                      <span>Многоквартирный дом</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group__wrapper">
+                  <label class="label" for="square">Площадь, кв. м</label>
+                  <input type="number" class="form-control" id="square" placeholder="Площадь здания" step="0.1" min="0">
+                </div>     
+              </div>                                  
+            </fieldset>
+
+            <!-- fieldset 3-->
+            <fieldset class="form-group form-group__line">
+              <legend>Виды работ</legend>
+              <div class="form-group__checkbox">
+                <div class="form-group__checkbox-wrapper">
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="1" checked>
+                      <span>Вентиляция</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="2">
+                      <span>Отопление</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="3">
+                      <span>Пожарная безопасность</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="4">
+                      <span>Кондиционирование</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="5">
+                      <span>Водопровод и канализация</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="6">
+                      <span>Слаботочные системы</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="7">
+                      <span>Электроснабжение</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work" value="8">
+                      <span>Ливневая канализация</span>
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" name="work-9" value="9">
+                      <span>Индивидуальный тепловой пункт</span>
+                    </label>
+                  </div>            
+                </div>
+              </div>
+                               
+            </fieldset>
+
+            <!-- fieldset 4-->
+            <fieldset class="form-group form-group__margin">
+              <legend>Техническое задание</legend>
+              <div class="form-group__task">
+                <div class="form-group__task-wrapper">
+                  <div class="file">
+                    <p>ТЗ не обязательно, но желательно для более детального расчета стоимости</p>
+                    <label class="custom-input" for="file">
+                      <input type="file" name="file" id="file" multiple>
+                      <span>Прикрепить ТЗ</span>
+                    </label>
+                    
+                  </div>  
+                  <div class="info">
+                    <label for="info">Дополнительная информация</label>
+                    <textarea class="form-control" id="info" placeholder="Комментарии и пожелания" maxlength="350"></textarea>
+                  </div>     
+                </div>
+              </div>
+                     
+            </fieldset>
+
+            <!-- submit -->
+            <div class="form-submit">
+              <button type="submit" >Отправить</button>
+              <span>Вы даете согласие на обработку <a href="#">персональных данных</a></span>
+            </div>            
+          </form>
+          <div class="success">
+            <div class="success-block">
+              <div class="wrap">
+                <img src="img/success.png" alt="success" width="80px" height="auto">
+                <span>Готово!</span>
+                <p>Ожидайте, мы уже изучаем ваш запрос и скоро с вами свяжемся.</p>
+              </div> 
+            </div>                       
+          </div>
+      </div>
+   </div>   
+
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+   <script>
+    $(document).ready(function() {
+      $('.form').on('click', 'button', function(event) {
+        event.preventDefault();
+        if ('input:valid') {
+          $('.form').addClass('hide').siblings('.success').slideToggle(200);
+        }
+        
+      });
+    });
+   </script>
+</body>
+</html>
